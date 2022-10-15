@@ -1,0 +1,3 @@
+<%= configurations_sidebar_menu_item(
+    Spree.t(:google_tag_manager), spree.admin_google_tag_managers_path
+  ) if can? :manage, Spree::Config %>

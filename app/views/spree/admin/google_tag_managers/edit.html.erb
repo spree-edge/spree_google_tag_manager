@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:google_tag_manager), spree.admin_google_tag_managers_url %> /
+  <%= @google_tag_manager.gtm_id %>
+<% end %>
+
+<%= render partial: 'spree/admin/shared/error_messages', locals: { target: @google_tag_manager } %>
+
+<%= form_for [:admin, @google_tag_manager] do |f| %>
+  <fieldset>
+    <%= render partial: 'form', locals: { f: f } %>
+    <%= render partial: 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>
