@@ -25,5 +25,6 @@ Gem::Specification.new do |s|
   # s.add_dependency 'spree_backend' # uncomment to include Admin Panel changes
   s.add_dependency 'spree_extension'
 
+  s.add_dependency 'deface'
   s.add_development_dependency 'spree_dev_tools'
 end

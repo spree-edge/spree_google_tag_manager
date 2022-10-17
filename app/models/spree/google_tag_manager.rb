@@ -1,14 +1,14 @@
 module Spree
   class GoogleTagManager < Spree::Base
-    validates :gtm_id, presence: true, uniqueness: { scope: :spree_store_id }
-    validates :store, presence: true
+    belongs_to :store, class_name: 'Spree::Store'
 
-    belongs_to :store
+    validates :gtm_id, presence: true, uniqueness: { scope: :store_id }
+    validates :store_id, presence: true
 
-    def self.current(engine = nil, store = nil)
+    def self.current(store = nil)
       store  ||= Spree::Store.default
 
-      @tag_managers = Spree::GoogleTagManager.find_by(spree_store_id: store.id)
+      @tag_managers = Spree::GoogleTagManager.find_by(store_id: store.id)
     end
   end 
 end

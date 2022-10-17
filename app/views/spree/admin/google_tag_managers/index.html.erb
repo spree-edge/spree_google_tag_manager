@@ -18,15 +18,15 @@
     </thead>
     <tbody>
       <% @google_tag_managers.each do |gtm|%>
-        <tr id="<%= spree_dom_id tracker %>" data-hook="admin_trackers_index_rows">
-          <td><%= gtm.id %></td>
+        <tr id="<%= spree_dom_id gtm %>" data-hook="admin_trackers_index_rows">
+          <td><%= gtm.gtm_id %></td>
           <td><%= gtm.store&.name %></td>
           <td class="text-center">
             <%= gtm.active ? Spree.t(:say_yes) : Spree.t(:say_no) %>
           </td>
           <td class="actions text-right">
-            <%= link_to_edit(tracker, no_text: true) if can? :edit, tracker %>
-            <%= link_to_delete(tracker, no_text: true) if can? :delete, tracker %>
+            <%= link_to_edit(gtm, no_text: true) if can? :edit, gtm %>
+            <%= link_to_delete(gtm, no_text: true) if can? :delete, gtm %>
           </td>
         </tr>
       <% end %>
