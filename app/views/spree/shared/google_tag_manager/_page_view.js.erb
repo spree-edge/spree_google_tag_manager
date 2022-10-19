@@ -4,7 +4,8 @@
     window.addEventListener('turbolinks:load', function() {
       if (typeof gtag !== 'undefined') {
         clearGAplugins();
-        gtag('event', 'page_view', "<%= page_view %>");
+        var data = <%= raw(page_view.to_json) %>
+        window.dataLayer.push(data);
       }
     });
   </script>

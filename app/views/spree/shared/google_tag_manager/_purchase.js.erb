@@ -1,10 +1,11 @@
 <% if gtm_tracker.present? && @order.present? && order_just_completed?(@order) %>
-  <% purchase = SpreeGoogleTagManager::OrderPresenter.product_view(@order) %>
+  <% purchase = SpreeGoogleTagManager::OrderPresenter.purchase(@order) %>
   <script>
     window.addEventListener('turbolinks:load', function() {
       if (typeof gtag !== 'undefined') {
         clearGAplugins();
-        gtag('event', 'purchase', "<%= purchase %>");
+        var data = <%= raw(purchase.to_json) %>
+        window.dataLayer.push(data);
       }
     });
   </script>
