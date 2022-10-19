@@ -3,12 +3,11 @@
 module SpreeGoogleTagManager
   class ProductPresenter
     class << self
-      def page_view(page_name, email)
+      def page_view(email = nil )
         {
           event: 'PageView',
           detail: {
-            page_name: page_name,
-            user_email: user_email
+            user_email: email || 'guest'
           }
         }
       end
