@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Deface::Override.new(
   virtual_path: 'spree/admin/shared/sub_menu/_configuration',
   name: 'add_google_tag_manager_to_admin_sidebar',

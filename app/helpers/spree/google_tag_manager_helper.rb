@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Spree
   module GoogleTagManagerHelper
     def gtm_tracker

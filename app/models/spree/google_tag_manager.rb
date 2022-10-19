@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Spree
   class GoogleTagManager < Spree::Base
     belongs_to :store, class_name: 'Spree::Store'
@@ -6,8 +8,8 @@ module Spree
     validates :store_id, presence: true
 
     def self.active(store = nil)
-      store  ||= Spree::Store.default
+      store ||= Spree::Store.default
       Spree::GoogleTagManager.find_by(store_id: store.id)
     end
-  end 
+  end
 end
