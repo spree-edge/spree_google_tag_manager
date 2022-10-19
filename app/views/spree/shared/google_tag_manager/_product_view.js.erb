@@ -1,0 +1,11 @@
+<% if gtm_tracker.present? && @product.present? %>
+  <% product = SpreeGoogleTagManager::ProductPresenter.product_view(@product) %>
+  <script>
+    window.addEventListener('turbolinks:load', function() {
+      if (typeof gtag !== 'undefined') {
+        clearGAplugins();
+        gtag('event', 'page_view', "<%= product %>");
+      }
+    });
+  </script>
+<% end %>
