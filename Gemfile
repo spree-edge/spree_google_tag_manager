@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'spree', github: 'spree/spree', branch: 'main'
+gem 'spree_frontend'
 gem 'rails-controller-testing'
 gem 'deface'
 gemspec

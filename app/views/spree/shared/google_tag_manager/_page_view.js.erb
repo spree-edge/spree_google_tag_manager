@@ -1,0 +1,12 @@
+<% if gtm_tracker.present? && @product.present? %>
+  <% page_view = SpreeGoogleTagManager::ProductPresenter.page_view(try_spree_current_user.email) %>
+  <script>
+    window.addEventListener('turbolinks:load', function() {
+      if (typeof gtag !== 'undefined') {
+        clearGAplugins();
+        var data = <%= raw(page_view.to_json) %>
+        window.dataLayer.push(data);
+      }
+    });
+  </script>
+<% end %>

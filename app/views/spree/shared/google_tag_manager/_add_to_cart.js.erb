@@ -1,0 +1,11 @@
+<% if gtm_tracker.present? && @order.present? %>
+  <% add_to_cart = SpreeGoogleTagManager::OrderPresenter.add_to_cart(@order) %>
+  <script>
+    window.addEventListener('turbolinks:load', function() {
+      if (typeof gtag !== 'undefined') {
+        clearGAplugins();
+        var data = <%= raw(add_to_cart.to_json) %>
+        window.dataLayer.push(data);      }
+    });
+  </script>
+<% end %>

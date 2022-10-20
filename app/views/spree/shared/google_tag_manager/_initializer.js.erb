@@ -1,10 +1,24 @@
 <% if gtm_tracker.present? %>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer',"GTM-<%= gtm_tracker.gtm_id %>");
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= gtm_tracker.gtm_id %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '<%= gtm_tracker.gtm_id %>', { 'send_page_view': true });
+      gtag('set', 'allow_google_signals', true )
+      gtag('set', 'allow_ad_personalization_signals', true );
+
+      function clearGAplugins() {
+        if (typeof ga !== "undefined" && typeof ga.getAll === "function") {
+          var trackingDom = ga.getAll()[0].get('trackingId');
+          if (trackingDom !== undefined) {
+            var trackingId = trackingDom.split('-').join('_')
+            if (trackingId !== undefined && ga.o !== undefined && ga.o["gtag_" + trackingId] !== undefined) {
+              delete ga.o["gtag_" + trackingId].plugins_
+            }
+          }
+        }
+      }
   </script>
 <% end %>
