@@ -1,6 +1,10 @@
 # SpreeGoogleTagManager
 
-Introduction goes here.
+
+## About
+
+This is a Spree Banner Extension. A Spree extension that provides ability to add Google Tag Manager at your website.
+
 
 ## Installation
 

@@ -8,12 +8,12 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_google_tag_manager'
   s.version     = SpreeGoogleTagManager.version
-  s.summary     = 'Add extension summary here'
-  s.description = 'Add (optional) extension description here'
+  s.summary     = 'Extension to add google tag manager in spree'
+  s.description = 'A spree_extension that provides ability to add google tag manager'
   s.required_ruby_version = '>= 2.5'
 
-  s.author    = 'You'
-  s.email     = 'you@example.com'
+  s.author    = 'Vishal Garg'
+  s.email     = 'vishal@bluebash.co'
   s.homepage  = 'https://github.com/your-github-handle/spree_google_tag_manager'
   s.license = 'BSD-3-Clause'
 
@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree', '>= 4.3.2'
-  # s.add_dependency 'spree_backend' # uncomment to include Admin Panel changes
   s.add_dependency 'spree_extension'
 
   s.add_dependency 'deface'
