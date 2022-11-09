@@ -1,5 +1,5 @@
-<% if gtm_tracker.present? %>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= gtm_tracker.gtm_id %>"></script>
+<% if gtm_tracker.active %>
+  <%= raw(gtm_tracker.head_snippet) %>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}

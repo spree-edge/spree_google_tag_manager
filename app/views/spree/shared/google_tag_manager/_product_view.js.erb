@@ -1,4 +1,4 @@
-<% if gtm_tracker.present? && @product.present? %>
+<% if gtm_tracker.active && @product.present? %>
   <% product = SpreeGoogleTagManager::ProductPresenter.product_view(@product) %>
   <script>
     window.addEventListener('turbolinks:load', function() {
