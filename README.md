@@ -5,6 +5,11 @@
 
 A Spree extension that provides the ability to add Google Tag Manager. It allows you to manage and deploy marketing tags on your website without having to modify the code.
 
+
+## Demo
+
+<img src="https://user-images.githubusercontent.com/43989104/200846013-55de5003-210a-435b-9d30-c1ecdf8dd76c.gif" height=400; width=800;></img>
+
 ## Installation
 
 1. Add this extension to your Gemfile with this line:
