@@ -1,4 +1,4 @@
-<% if gtm_tracker.active && @order.present? %>
+<% if gtm_tracker&.active && @order.present? %>
   <% add_to_cart = SpreeGoogleTagManager::OrderPresenter.add_to_cart(@order) %>
   <script>
     window.addEventListener('turbolinks:load', function() {
