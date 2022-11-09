@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Deface::Override.new(
   virtual_path: 'spree/products/show',
   name: 'add_product_viewed_to_products_show',

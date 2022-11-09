@@ -1,41 +1,34 @@
 <div data-hook="google_tag_manager_form_fields" class="row">
-  <div class="col-12 ">
-    <%= f.field_container :head_snippet do %>
-      <%= f.label :head_snippet, Spree.t(:Script_head) %>
-      <%= f.error_message_on :head_snippet %>
-      <%= f.text_area :head_snippet, class: 'form-control', rows: 10 ,cols: 80 %>
-    <% end %>
-  </div>
-  <div class="col-12 ">
-    <%= f.field_container :body_snippet do %>
-      <%= f.label :body_snippet, Spree.t(:Script_Body) %>
-      <%= f.error_message_on :body_snippet %>
-      <%= f.text_area :body_snippet, class: 'form-control', rows: 10, cols: 80 %>
-    <% end %>
-  </div>
-  <div class="col-12 col-lg-6">
-    <div data-hook="active" class="form-group">
-      <%= label_tag nil, Spree.t(:active) %>
-      <div class="radio">
-        <%= label_tag :google_tag_manager_active_true do %>
-          <%= radio_button(:google_tag_manager, :active, true) %>
-          <%= Spree.t(:say_yes) %>
-        <% end %>
+   <div class="col-12 ">
+      <%= f.field_container :head_snippet do %>
+        <%= f.label :head_snippet, Spree.t(:header_script) %>
+        <%= f.error_message_on :head_snippet %>
+        <%= f.text_area :head_snippet, class: 'form-control', rows: 10 ,cols: 80 %>
+      <% end %>
+   </div>
+   <div class="col-12 ">
+      <%= f.field_container :body_snippet do %>
+        <%= f.label :body_snippet, Spree.t(:body_script) %>
+        <%= f.error_message_on :body_snippet %>
+        <%= f.text_area :body_snippet, class: 'form-control', rows: 10, cols: 80 %>
+      <% end %>
+   </div>
+   <div class="col-12 col-lg-6">
+      <div data-hook="active" class="form-group">
+         <%= label_tag nil, Spree.t(:status) %>
+         <div class="radio">
+            <%= label_tag :google_tag_manager_active_true do %>
+              <%= radio_button(:google_tag_manager, :active, true) %>
+              <%= Spree.t(:active) %>
+            <% end %>
+         </div>
+         <div class="radio">
+            <%= label_tag :google_tag_manager_active_false do %>
+              <%= radio_button(:google_tag_manager, :active, false) %>
+              <%= Spree.t(:inactive) %>
+            <% end %>
+         </div>
       </div>
-      <div class="radio">
-        <%= label_tag :google_tag_manager_active_false do %>
-          <%= radio_button(:google_tag_manager, :active, false) %>
-          <%= Spree.t(:say_no) %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="col-12 col-lg-6" data-hook="gtm_id">
-    <%= f.field_container :gtm_id, class: ["form-group"], "data-hook" => "gtm_id" do %>
-      <%= f.label :gtm_id, Spree.t(:gtm_id) %>
-      <%= f.text_field :gtm_id, class: 'form-control' %>
-      <%= f.error_message_on :gtm_id %>
-    <% end %>
-  </div>
-  <div class="col-12 col-lg-6" data-hook="additional_tracker_fields"></div>
+   </div>
+   <%= f.hidden_field :store_id, value: current_store.id %>
 </div>
