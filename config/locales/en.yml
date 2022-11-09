@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  spree:
+    google_tag_manager: 'Google Tag Manager'
+    header_script: 'Header Script'
+    body_script: 'Body Script'

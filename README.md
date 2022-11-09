@@ -3,8 +3,7 @@
 
 ## About
 
-This is a Spree Banner Extension. A Spree extension that provides ability to add Google Tag Manager at your website.
-
+A Spree extension that provides the ability to add Google Tag Manager. It allows you to manage and deploy marketing tags on your website without having to modify the code.
 
 ## Installation
 
