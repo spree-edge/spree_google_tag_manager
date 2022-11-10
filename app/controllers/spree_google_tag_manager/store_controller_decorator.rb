@@ -5,7 +5,6 @@ module SpreeGoogleTagManager
     def self.included(base)
       base.include ::Spree::BaseHelper
 
-      base.helper 'spree/google_tag_manager'
     end
   end
 end

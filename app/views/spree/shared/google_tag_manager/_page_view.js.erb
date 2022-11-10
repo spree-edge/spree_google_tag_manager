@@ -1,5 +1,5 @@
 <% if gtm_tracker&.active && @product.present? %>
-  <% page_view = SpreeGoogleTagManager::ProductPresenter.page_view(try_spree_current_user.email) %>
+  <% page_view = SpreeGoogleTagManager::ProductPresenter.page_view(try_spree_current_user&.email) %>
   <script>
     window.addEventListener('turbolinks:load', function() {
       if (typeof gtag !== 'undefined') {
