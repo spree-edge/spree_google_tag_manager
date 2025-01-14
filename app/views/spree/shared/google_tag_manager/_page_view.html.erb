@@ -1,7 +1,7 @@
 <% if gtm_tracker&.active && @product.present? %>
   <% page_view = SpreeGoogleTagManager::ProductPresenter.page_view(try_spree_current_user&.email) %>
   <script>
-    window.addEventListener('turbolinks:load', function() {
+    window.addEventListener('turbo:load', function() {
       if (typeof gtag !== 'undefined') {
         clearGAplugins();
         var data = <%= raw(page_view.to_json) %>

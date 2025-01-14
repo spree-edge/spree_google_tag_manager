@@ -9,8 +9,8 @@ module SpreeGoogleTagManager
       g.test_framework :rspec
     end
 
-    initializer 'spree_google_tag_manager.environment', before: :load_config_initializers do |_app|
-      SpreeGoogleTagManager::Config = SpreeGoogleTagManager::Configuration.new
+    config.after_initialize do |_app|
+      SpreeGoogleTagManager::Config = ::SpreeGoogleTagManager::Configuration.new
     end
 
     def self.activate
