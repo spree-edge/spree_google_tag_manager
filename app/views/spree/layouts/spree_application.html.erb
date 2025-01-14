@@ -1,0 +1,33 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/header' %>
+    <div id="overlay" class="overlay hide-on-esc"></div>
+
+    <div data-hook>
+      <%= flash_messages %>
+      <main class="col-12" id="content" data-hook>
+        <%= yield %>
+      </main>
+
+      <%= yield :templates %>
+    </div>
+
+    <%= render partial: 'spree/shared/footer' %>
+    <%= render 'spree/shared/translations' %>
+  </body>
+  <% if gtm_tracker&.active %>
+    <%= raw(gtm_tracker.body_snippet) %>
+  <% end %>
+</html>

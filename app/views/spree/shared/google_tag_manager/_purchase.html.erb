@@ -1,7 +1,7 @@
 <% if gtm_tracker&.active && @order.present? && order_just_completed?(@order) %>
   <% purchase = SpreeGoogleTagManager::OrderPresenter.purchase(@order) %>
   <script>
-    window.addEventListener('turbolinks:load', function() {
+    window.addEventListener('turbo:load', function() {
       if (typeof gtag !== 'undefined') {
         clearGAplugins();
         var data = <%= raw(purchase.to_json) %>
